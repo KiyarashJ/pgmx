@@ -1,0 +1,13 @@
+[package]
+name = "pgmx"
+version = "0.1.0"
+edition = "2024"
+description = "A lossless image format and encoder/decoder library"
+license = "MIT"
+readme = "README.md"
+keywords = ["image", "compression", "lossless", "image-format"]
+categories = ["multimedia::images"]
+
+[dependencies]
+bytemuck = { version = "1.25.2", features = ["derive"] }
+image = "0.25.10"
