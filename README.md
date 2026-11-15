@@ -63,16 +63,15 @@ cargo add pgmx
 
 ## 🚀 Quick start
 
-> ⚠️ **Note:** the function names below are examples. Replace them with the real public API of your crate before publishing.
 
 ### Convert a normal image to `.pgmx`
 
 ```rust
-use pgmx::encoder;
+use pgmx::encoder_handler;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     // PNG / JPEG / WebP -> PGMX
-    encoder::encode("photo.png", "photo.pgmx")?;
+    encoder_handler("photo.png")?;
     Ok(())
 }
 ```
@@ -80,26 +79,14 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 ### Convert `.pgmx` back to the original format
 
 ```rust
-use pgmx::decoder;
+use pgmx::decoder_handler;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     // PGMX -> original format (stored in the header)
-    decoder::decode("photo.pgmx")?;
+    decoder_::handler("photo.pgmx")?;
     Ok(())
 }
 ```
-
-### Read only the grayscale (Y) channel
-
-```rust
-use pgmx::decoder;
-
-fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let bytes = std::fs::read("photo.pgmx")?;
-    let gray = decoder::read_gray(bytes).ok_or("invalid pgmx file")?;
-    gray.save("preview.png")?;
-    Ok(())
-}
 ```
 
 ---
