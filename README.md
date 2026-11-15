@@ -71,7 +71,7 @@ use pgmx::encoder_handler;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     // PNG / JPEG / WebP -> PGMX
-    encoder_handler("photo.png")?;
+    encoder_handler::encoder_handler("photo.png");
     Ok(())
 }
 ```
@@ -83,7 +83,7 @@ use pgmx::decoder_handler;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     // PGMX -> original format (stored in the header)
-    decoder_::handler("photo.pgmx")?;
+    decoder_handler::decoder_handler("photo.pgmx");
     Ok(())
 }
 ```
