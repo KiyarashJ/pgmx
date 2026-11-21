@@ -50,7 +50,7 @@ The Y channel sits right at the start of the data section, so you can show a gra
 
 ```toml
 [dependencies]
-pgmx = "0.1"
+pgmx = "0.1.1"
 ```
 
 or
